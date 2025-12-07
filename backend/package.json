@@ -1,0 +1,18 @@
+{
+  "name": "vault-backend",
+  "version": "1.0.0",
+  "description": "Backend for TruEstate R.S.M.S. - Sales Management System",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "4.7.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

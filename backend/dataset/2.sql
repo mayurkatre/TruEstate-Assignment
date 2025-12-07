@@ -1,0 +1,22 @@
+
+INSERT INTO sales (transaction_id, date, customer_id, customer_name, phone_number, gender, age, product_category, quantity, total_amount, customer_region, product_id, employee_name, tags, payment_method) VALUES
+('TXN001', '2023-09-26', 'CUST001', 'Rahul Sharma', '9876543210', 'Male', 28, 'Electronics', 2, 45000, 'North', 'PROD001', 'Harsh Agrawal', 'premium,electronics', 'UPI'),
+('TXN002', '2023-09-27', 'CUST002', 'Priya Singh', '9876543211', 'Female', 25, 'Clothing', 1, 1200, 'South', 'PROD002', 'Neha Verma', 'fashion,casual', 'Credit Card'),
+('TXN003', '2023-09-28', 'CUST003', 'Amit Kumar', '9876543212', 'Male', 35, 'Home Appliances', 1, 25000, 'East', 'PROD003', 'Raj Malhotra', 'appliances,home', 'Debit Card'),
+('TXN004', '2023-09-29', 'CUST004', 'Sneha Patel', '9876543213', 'Female', 30, 'Electronics', 3, 75000, 'West', 'PROD004', 'Harsh Agrawal', 'premium,gadgets', 'UPI'),
+('TXN005', '2023-09-30', 'CUST005', 'Vikas Reddy', '9876543214', 'Male', 42, 'Furniture', 2, 35000, 'South', 'PROD005', 'Anita Desai', 'furniture,home', 'Cash'),
+('TXN006', '2023-10-01', 'CUST006', 'Anjali Mehta', '9876543215', 'Female', 27, 'Clothing', 4, 4800, 'North', 'PROD006', 'Neha Verma', 'fashion,trendy', 'UPI'),
+('TXN007', '2023-10-02', 'CUST007', 'Ravi Gupta', '9876543216', 'Male', 31, 'Electronics', 1, 15000, 'East', 'PROD007', 'Harsh Agrawal', 'electronics,mobile', 'Credit Card'),
+('TXN008', '2023-10-03', 'CUST008', 'Kavita Iyer', '9876543217', 'Female', 38, 'Books', 5, 2500, 'West', 'PROD008', 'Raj Malhotra', 'education,books', 'Debit Card'),
+('TXN009', '2023-10-04', 'CUST009', 'Sanjay Joshi', '9876543218', 'Male', 45, 'Sports', 2, 8000, 'North', 'PROD009', 'Anita Desai', 'sports,fitness', 'UPI'),
+('TXN010', '2023-10-05', 'CUST010', 'Deepa Nair', '9876543219', 'Female', 29, 'Cosmetics', 3, 3600, 'South', 'PROD010', 'Neha Verma', 'beauty,cosmetics', 'Cash'),
+('TXN011', '2023-10-06', 'CUST011', 'Arun Kapoor', '9876543220', 'Male', 33, 'Electronics', 1, 22000, 'East', 'PROD011', 'Harsh Agrawal', 'premium,laptop', 'Credit Card'),
+('TXN012', '2023-10-07', 'CUST012', 'Meera Shah', '9876543221', 'Female', 26, 'Jewelry', 1, 55000, 'West', 'PROD012', 'Raj Malhotra', 'jewelry,gold', 'UPI'),
+('TXN013', '2023-10-08', 'CUST013', 'Karan Singh', '9876543222', 'Male', 40, 'Home Appliances', 2, 18000, 'North', 'PROD013', 'Anita Desai', 'appliances,kitchen', 'Debit Card'),
+('TXN014', '2023-10-09', 'CUST014', 'Pooja Rao', '9876543223', 'Female', 24, 'Clothing', 2, 2400, 'South', 'PROD014', 'Neha Verma', 'fashion,ethnic', 'Cash'),
+('TXN015', '2023-10-10', 'CUST015', 'Suresh Pillai', '9876543224', 'Male', 37, 'Furniture', 1, 28000, 'East', 'PROD015', 'Raj Malhotra', 'furniture,bedroom', 'UPI'),
+('TXN016', '2023-10-11', 'CUST016', 'Nisha Chopra', '9876543225', 'Female', 32, 'Electronics', 2, 48000, 'West', 'PROD016', 'Harsh Agrawal', 'electronics,tv', 'Credit Card'),
+('TXN017', '2023-10-12', 'CUST017', 'Manoj Tiwari', '9876543226', 'Male', 29, 'Sports', 3, 12000, 'North', 'PROD017', 'Anita Desai', 'sports,outdoor', 'Debit Card'),
+('TXN018', '2023-10-13', 'CUST018', 'Rina Das', '9876543227', 'Female', 36, 'Books', 4, 2000, 'South', 'PROD018', 'Raj Malhotra', 'education,fiction', 'UPI'),
+('TXN019', '2023-10-14', 'CUST019', 'Ashok Yadav', '9876543228', 'Male', 41, 'Clothing', 1, 1500, 'East', 'PROD019', 'Neha Verma', 'fashion,formal', 'Cash'),
+('TXN020', '2023-10-15', 'CUST020', 'Sunita Bhatt', '9876543229', 'Female', 28, 'Cosmetics', 4, 4800, 'West', 'PROD020', 'Neha Verma', 'beauty,skincare', 'UPI');
