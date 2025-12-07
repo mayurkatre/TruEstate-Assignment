@@ -1,5 +1,5 @@
 // frontend/src/js/api.js
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://truestate-92d6.onrender.com';
 
 export const fetchSales = async (params = {}) => {
   try {
