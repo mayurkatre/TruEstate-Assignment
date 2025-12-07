@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.22",
     "lucide-react": "^0.510.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
