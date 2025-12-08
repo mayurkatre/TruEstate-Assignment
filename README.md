@@ -1,8 +1,45 @@
-# TruEstate R.S.M.S. - Sales Management System
+# TruEstate R.S.M.S. — Sales Management System
 
-A comprehensive sales management system built with modern web technologies.
+A modern, full-stack Retail & Real Estate Sales Management System built with React (Vite) on the frontend and Node.js + Hono on the backend.
+Designed to manage sales, customers, products, and analytics with powerful filtering, search, sorting, and pagination capabilities.
 
-## Project Structure
+## 🚀 Live Deployment
+
+Frontend + Backend Deployment (Render):
+🔗 https://truestate-assignment-as17.onrender.com/
+
+## 📘 Technical Documentation (HLD + LLD + Architecture)
+
+All diagrams, LLD, HLD, and architecture docs are available here:
+📂 https://drive.google.com/drive/folders/1_RXCbMdpIWdWZuif5CFXkmYoKWoWRfhu
+
+## 📌 Important Note on Data & Production Readiness
+
+This project currently uses sample CSV data only for demonstration purposes.
+
+For real production-level deployment, the system fully supports:
+
+✅ PostgreSQL Integration
+
+CSV → PostgreSQL data migration
+
+Using Node.js CSV parsing libraries:
+
+- csv-parser
+- fast-csv
+- Papa Parse
+
+✅ Converting CSV to SQL
+
+Automatically convert CSV dataset into SQL tables
+
+Populate structured PostgreSQL database
+
+Replace all in-memory operations with SQL queries
+
+This ensures the system can scale for enterprise-grade sales operations.
+
+## 📁 Project Structure
 
 ```
 root/
@@ -41,37 +78,85 @@ root/
 └── README.md
 ```
 
-## Components
+## 🧩 Components Overview
 
-### Backend
-The backend is built with Node.js and uses Hono for routing. It connects to a database to manage sales data.
+### Backend (Node.js + Hono)
 
-### Frontend
-The frontend is built with React and uses Vite for development and build processes.
+Fast and lightweight REST API using Hono
 
-## Setup
+Handles:
 
-1. Navigate to the backend directory and install dependencies:
-   ```
-   cd backend
-   npm install
-   ```
+- Sales operations
+- Filtering, sorting, pagination
+- Customer & product data processing
 
-2. Navigate to the frontend directory and install dependencies:
-   ```
-   cd ../frontend
-   npm install
-   ```
+Easily upgradable to PostgreSQL for production
 
-3. Start the development servers:
-   ```
-   # In backend directory
-   npm run dev
-   
-   # In frontend directory
-   npm start
-   ```
+CSV → SQL support via parsing libraries
 
-## Documentation
+### Frontend (React + Vite + Tailwind)
 
-See the `docs/` directory for detailed architecture and design documents.
+Modern SPA (Single Page Application)
+
+Built with:
+
+- React (19)
+- Vite
+- Tailwind CSS
+- Lucide Icons
+
+Implements:
+
+- Dynamic dashboards
+- Search & filtering UI
+- Reactive tables
+- Sales analytics
+
+## 🛠️ Local Development Setup
+
+### 1️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 2️⃣ Frontend Setup
+
+```bash
+cd ../frontend
+npm install
+npm start
+```
+
+## ☁️ Deployment Details
+
+Hosted on Render
+
+| Component | Render Service Type | Status |
+|----------|---------------------|--------|
+| Backend | Web Service | ✔ Live |
+| Frontend | Static Web Service | ✔ Live |
+
+The architecture uses:
+
+- Auto-build on Git push
+- Node.js build & start commands
+- Static deployment with global CDN for frontend
+
+## 📚 Documentation
+
+Full architecture, workflow diagrams, HLD, LLD, and system explanation:
+📂 https://drive.google.com/drive/folders/1_RXCbMdpIWdWZuif5CFXkmYoKWoWRfhu
+
+## 🎯 Summary
+
+TruEstate R.S.M.S. is a scalable sales management platform supporting:
+
+- Modern UI (React + Tailwind)
+- Fast backend (Node.js + Hono)
+- Search, Filter, Sort, Pagination
+- CSV Data Ingestion & SQL Migration Support
+- Ready for PostgreSQL production deployment
+- Fully deployed on Render
