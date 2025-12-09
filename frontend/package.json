@@ -1,5 +1,5 @@
 {
-  "name": "vault-frontend",
+  "name": "truestate-rsms-frontend",
   "version": "1.0.0",
   "description": "Frontend for TruEstate R.S.M.S. - Sales Management System",
   "main": "src/js/app.js",

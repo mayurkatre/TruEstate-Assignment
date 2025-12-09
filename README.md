@@ -25,9 +25,8 @@ CSV → PostgreSQL data migration
 
 Using Node.js CSV parsing libraries:
 
-- csv-parser
-- fast-csv
-- Papa Parse
+- csv-parse
+- pg (PostgreSQL client)
 
 ✅ Converting CSV to SQL
 
@@ -45,11 +44,19 @@ This ensures the system can scale for enterprise-grade sales operations.
 root/
 ├── backend/
 │   ├── dataset/
-│   │   └── migrations data
+│   │   └── truestate_assignment_dataset.csv (1 million records)
+│   │
+│   ├── migrations/
+│   │   └── database migration scripts
+│   │
+│   ├── scripts/
+│   │   ├── import-csv.js (CSV import utility)
+│   │   └── setup-db.js (Database setup utility)
 │   │
 │   ├── src/
 │   │   ├── controllers/
 │   │   ├── services/
+│   │   │   └── PostgreSQL database service
 │   │   ├── utils/
 │   │   ├── routes/
 │   │   ├── models/
@@ -80,19 +87,23 @@ root/
 
 ## 🧩 Components Overview
 
-### Backend (Node.js + Hono)
+### Backend (Node.js + Hono + PostgreSQL)
 
-Fast and lightweight REST API using Hono
+Fast and lightweight REST API using Hono with PostgreSQL database integration
 
 Handles:
 
-- Sales operations
-- Filtering, sorting, pagination
+- Sales operations with advanced filtering
+- Multi-select filtering capabilities
+- Sorting, pagination at database level
 - Customer & product data processing
 
-Easily upgradable to PostgreSQL for production
+Production-ready PostgreSQL implementation with:
 
-CSV → SQL support via parsing libraries
+- Optimized schema design
+- Indexing for performance
+- Array fields for multi-value tags
+- Efficient CSV import utility
 
 ### Frontend (React + Vite + Tailwind)
 
@@ -107,10 +118,10 @@ Built with:
 
 Implements:
 
-- Dynamic dashboards
-- Search & filtering UI
-- Reactive tables
-- Sales analytics
+- Dynamic dashboards with summary statistics
+- Advanced multi-select filtering UI
+- Reactive tables with pagination
+- Sales analytics and data visualization
 
 ## 🛠️ Local Development Setup
 
@@ -119,6 +130,10 @@ Implements:
 ```bash
 cd backend
 npm install
+# Set up PostgreSQL database
+# Create .env file with database credentials
+npm run setup-db
+npm run import-csv
 npm run dev
 ```
 
@@ -150,13 +165,56 @@ The architecture uses:
 Full architecture, workflow diagrams, HLD, LLD, and system explanation:
 📂 https://drive.google.com/drive/folders/1_RXCbMdpIWdWZuif5CFXkmYoKWoWRfhu
 
+Additional technical documents:
+
+- [Testing Checklist](TESTING_CHECKLIST.md)
+- [Deployment Summary](DEPLOYMENT_SUMMARY.md)
+- [Recommended Improvements](IMPROVEMENTS.md)
+
 ## 🎯 Summary
 
 TruEstate R.S.M.S. is a scalable sales management platform supporting:
 
-- Modern UI (React + Tailwind)
-- Fast backend (Node.js + Hono)
+- Modern UI with advanced multi-select filtering
+- Fast backend with PostgreSQL database
 - Search, Filter, Sort, Pagination
 - CSV Data Ingestion & SQL Migration Support
 - Ready for PostgreSQL production deployment
 - Fully deployed on Render
+
+## 🔧 PostgreSQL Database Features
+
+The system now includes a full PostgreSQL implementation with:
+
+- Optimized schema for 1M+ records
+- Multi-select filtering using PostgreSQL arrays
+- GIN indexes for efficient tag-based searches
+- Batch processing for large CSV imports
+- Connection pooling for performance
+- Comprehensive indexing strategy
+
+To set up the PostgreSQL database:
+
+1. Install PostgreSQL locally or use a cloud provider
+2. Configure environment variables in the backend
+3. Run `npm run setup-db` to create the database and tables
+4. Run `npm run import-csv` to populate the database with data
+
+## ☁️ Render Deployment Instructions
+
+To deploy this application to Render with PostgreSQL:
+
+1. Create a PostgreSQL database on Render
+2. Deploy the backend as a Web Service with the following settings:
+   - Build command: `npm install`
+   - Start command: `npm start`
+   - Environment variables:
+     - `DATABASE_URL` (provided by Render)
+     - `NODE_ENV=production`
+
+3. Deploy the frontend as a Static Site with the following settings:
+   - Build command: `npm install && npm run build`
+   - Publish directory: `dist`
+
+4. Update the frontend API URL to point to your deployed backend
+5. Redeploy the frontend

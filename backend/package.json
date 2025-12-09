@@ -1,5 +1,5 @@
 {
-  "name": "vault-backend",
+  "name": "truestate-rsms-backend",
   "version": "1.0.0",
   "description": "Backend for TruEstate R.S.M.S. - Sales Management System",
   "main": "src/server.js",
@@ -7,11 +7,20 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "build": "echo 'No build required for Node.js backend'"
+    "build": "echo 'No build required for Node.js backend'",
+    "migrate": "psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $DB_NAME -f migrations/01_create_sales_table.sql",
+    "setup-db": "node scripts/setup-db.js",
+    "import-csv": "node scripts/import-csv.js backend/dataset/truestate_assignment_dataset.csv",
+    "test-db": "node scripts/test-db-setup.js",
+    "verify-db": "node scripts/verify-db-connection.js",
+    "reset-db": "node scripts/reset-db.js --force"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
-    "hono": "4.7.7"
+    "csv-parse": "^5.5.0",
+    "dotenv": "^17.2.3",
+    "hono": "4.7.7",
+    "pg": "^8.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.0"
