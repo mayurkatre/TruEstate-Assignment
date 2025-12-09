@@ -1,5 +1,5 @@
 // TODO: Update this URL to point to your deployed backend service
-const API_BASE_URL = 'https://your-render-backend-service.onrender.com';
+const API_BASE_URL = 'https://truestate-92d6.onrender.com';
 
 export const fetchSales = async (params = {}) => {
   try {
