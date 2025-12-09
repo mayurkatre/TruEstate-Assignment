@@ -11,6 +11,7 @@
     "migrate": "psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $DB_NAME -f migrations/01_create_sales_table.sql",
     "setup-db": "node scripts/setup-db.js",
     "import-csv": "node scripts/import-csv.js backend/dataset/truestate_assignment_dataset.csv",
+    "download-and-import": "node scripts/download-and-import.js",
     "test-db": "node scripts/test-db-setup.js",
     "verify-db": "node scripts/verify-db-connection.js",
     "reset-db": "node scripts/reset-db.js --force"

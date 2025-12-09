@@ -8,10 +8,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: DATABASE_URL
-        fromDatabase:
-          name: truestate-rsms-db
-          property: connectionString
 
   - type: web
     name: truestate-rsms-frontend
@@ -22,6 +18,8 @@ services:
       - key: NODE_VERSION
         value: 18
 
-databases:
-  - name: truestate-rsms-db
-    plan: free
+# Since you've already created the database, we'll reference it by its name
+# You'll need to update this with your actual database name on Render
+# databases:
+#   - name: YOUR_EXISTING_DATABASE_NAME
+#     plan: free

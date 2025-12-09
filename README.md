@@ -133,7 +133,7 @@ npm install
 # Set up PostgreSQL database
 # Create .env file with database credentials
 npm run setup-db
-npm run import-csv
+npm run download-and-import
 npm run dev
 ```
 
@@ -198,7 +198,7 @@ To set up the PostgreSQL database:
 1. Install PostgreSQL locally or use a cloud provider
 2. Configure environment variables in the backend
 3. Run `npm run setup-db` to create the database and tables
-4. Run `npm run import-csv` to populate the database with data
+4. Run `npm run download-and-import` to populate the database with data
 
 ## ☁️ Render Deployment Instructions
 
@@ -218,3 +218,27 @@ To deploy this application to Render with PostgreSQL:
 
 4. Update the frontend API URL to point to your deployed backend
 5. Redeploy the frontend
+
+## 📥 CSV Data Import
+
+The sales data CSV file is hosted on Google Drive. You can import the data in two ways:
+
+### Option 1: Automatic Download and Import (Recommended)
+This will automatically download the CSV file from Google Drive and import it:
+
+```bash
+npm run download-and-import
+```
+
+### Option 2: Manual Download and Import
+1. Download the CSV file:
+   ```bash
+   curl -L "https://drive.google.com/uc?export=download&id=1tzbyuxBmrBwMSXbL22r33FUMtO0V_lxb" -o backend/dataset/truestate_assignment_dataset.csv
+   ```
+
+2. Run the import script:
+   ```bash
+   npm run import-csv
+   ```
+
+This approach allows you to keep the large file separate from your repository while still having a reliable way to import the data during deployment.

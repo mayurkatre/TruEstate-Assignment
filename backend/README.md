@@ -61,6 +61,28 @@
    node scripts/import-csv.js backend/dataset/truestate_assignment_dataset.csv
    ```
 
+## CSV Data Import
+
+The sales data CSV file is hosted on Google Drive. You can import the data in two ways:
+
+### Option 1: Automatic Download and Import (Recommended)
+This will automatically download the CSV file from Google Drive and import it:
+
+```bash
+npm run download-and-import
+```
+
+### Option 2: Manual Download and Import
+1. Download the CSV file:
+   ```bash
+   curl -L "https://drive.google.com/uc?export=download&id=1tzbyuxBmrBwMSXbL22r33FUMtO0V_lxb" -o backend/dataset/truestate_assignment_dataset.csv
+   ```
+
+2. Run the import script:
+   ```bash
+   npm run import-csv
+   ```
+
 ## Database Maintenance Scripts
 
 ### Reset Database
@@ -226,7 +248,7 @@ To deploy this backend to Render with PostgreSQL:
    
 4. Import the CSV data by running:
    ```bash
-   render run npm run import-csv
+   render run npm run download-and-import
    ```
 
 5. The backend will be accessible at your Render service URL
